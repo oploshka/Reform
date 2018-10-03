@@ -1,8 +1,8 @@
 <?php
 
-namespace Rpc\Utils\Validate\system;
+namespace Oploshka\ReformItem;
 
-class StringValidate implements \Rpc\Utils\ValidateInterface {
+class StringReform implements \Oploshka\Reform\ReformItemIntarface {
 
   // 'string'
   private static $settings = ['min' => 1, 'max'=>1024, 'trim' => true,];
