@@ -1,11 +1,8 @@
 <?php
 
-namespace Rpc\Utils;
+namespace Oploshka\Reform;
 
-// use Rpc\Utils\Validate\system;
-// use Rpc\Utils\Validate\custom;
-
-class Validate implements \Rpc\Utils\ValidateItemInterface {
+class Reform implements \Rpc\Utils\ValidateItemInterface {
   
   private static $validateMethods = [
     // system
