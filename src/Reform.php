@@ -2,7 +2,7 @@
 
 namespace Oploshka\Reform;
 
-class Reform implements \Rpc\Utils\ValidateItemInterface {
+class Reform implements \Oploshka\Reform\ReformInterface {
   
   private static $validateMethods = [
     // system

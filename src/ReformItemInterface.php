@@ -1,8 +1,8 @@
 <?php
 
-namespace Rpc\Utils;
+namespace Oploshka\Reform;
 
-interface ValidateItemInterface {
+interface ReformItemInterface {
   
   public static function item($item, $validate  );
   
