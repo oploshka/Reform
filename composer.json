@@ -16,7 +16,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Oploshka\\Reform\\": "src"
+            "Oploshka\\Reform\\": "src",
+            "Oploshka\\ReformItem\\": "src/ReformItem"
         }
     },
     "autoload-dev": {

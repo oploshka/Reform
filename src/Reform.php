@@ -4,6 +4,13 @@ namespace Oploshka\Reform;
 
 class Reform implements \Oploshka\Reform\ReformInterface {
   
+  private $reformMethods;
+
+  function  __construct($reformMethods){
+    $this->reformMethods = $reformMethods;
+  }
+  /*
+  // TODO: delete
   private static $validateMethods = [
     // system
     'string'        => '\\Rpc\\Utils\\Validate\\system\\StringValidate'       ,
@@ -22,22 +29,23 @@ class Reform implements \Oploshka\Reform\ReformInterface {
     'token'         => '\\Rpc\\Utils\\Validate\\custom\\TokenValidate'        ,
     'city'          => '\\Rpc\\Utils\\Validate\\custom\\CityValidate'         ,    
   ];
+  */
   
   /*
    * Функция валидации переменной
    */
-  public static function item($item = NULL, $validate = array() ){
+  public function item($item = NULL, $validate = array() ){
     // проверим данные на существование
     if( $item === NULL )                { return NULL; }
     if( !is_array($validate) )          { return NULL; }
     if( !isset($validate['type']) )     { return NULL; }
     if( !is_string($validate['type']) ) { return NULL; }
-    if(!isset(self::$validateMethods[ $validate['type'] ])){ return NULL; }
+    if(!isset($this->reformMethods[ $validate['type'] ])){ return NULL; }
     //
-    $ValidateClassName = self::$validateMethods[ $validate['type'] ];
+    $ValidateClassName = $this->reformMethods[ $validate['type'] ];
     $useClass = new $ValidateClassName();
     // проверим реализует ли класс наш интерфейс
-    if ( !($useClass instanceof \Rpc\Utils\ValidateInterface) ) { return NULL; }
+    if ( !($useClass instanceof \Oploshka\ReformItemInterface ) ) { return NULL; }
   
     $_validate = $validate['validate'] ?? [];
     return $useClass::validate($item, $_validate);
