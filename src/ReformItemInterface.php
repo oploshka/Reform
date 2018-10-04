@@ -3,7 +3,6 @@
 namespace Oploshka\Reform;
 
 interface ReformItemInterface {
-  
-  public static function item($item, $validate  );
-  
+  public static function getSettings();
+  public static function validate($value, $validate);
 }

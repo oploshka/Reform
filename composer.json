@@ -1,28 +1,28 @@
 {
-    "name": "oploshka/reform",
-    "description": "",
-    "license": "proprietary",
-    "authors": [
-        {
-            "name": "Andrey Tyurin",
-            "email": "ectb08@mail.ru"
-        }
-    ],
-    "require": {
-        "php": ">=5.4.0"
-    },
-    "require-dev": {
-        
-    },
-    "autoload": {
-        "psr-4": {
-            "Oploshka\\Reform\\": "src",
-            "Oploshka\\ReformItem\\": "src/ReformItem"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Oploshka\\ReformTest\\": "test"
-        }
+  "name": "oploshka/reform",
+  "description": "",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Andrey Tyurin",
+      "email": "ectb08@mail.ru"
     }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Oploshka\\Reform\\": "src",
+      "Oploshka\\ReformItem\\": "src/ReformItem"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Oploshka\\ReformTest\\": "test"
+    }
+  }
 }
