@@ -6,23 +6,8 @@ class Reform implements \Oploshka\Reform\ReformInterface {
   
   private $reformMethods;
 
-
-
   function  __construct($reformMethods){
     $this->reformMethods = $reformMethods;
-  }
-
-  public function getSettings(){
-    return [
-      'string'        => 'ReformItem\\StringRefoorm'       ,
-//      'int'           => 'ReformItem\\IntRefoorm'          ,
-//      'float'         => 'ReformItem\\FloatRefoorm'        ,
-//      'json'          => 'ReformItem\\JsonRefoorm'         ,
-//      'email'         => 'ReformItem\\EmailRefoorm'        ,
-//      'password'      => 'ReformItem\\PasswordRefoorm'     ,
-//      'origin'        => 'ReformItem\\OriginRefoorm'       ,
-//      'datetime'      => 'ReformItem\\DateTimeRefoorm'     ,
-    ];
   }
   
   /*

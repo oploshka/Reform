@@ -2,3 +2,4 @@
 composer.lock
 composer.phar
 vendor/
+*.php___jb_tmp___
