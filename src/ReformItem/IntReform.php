@@ -1,8 +1,10 @@
 <?php
 
-namespace Rpc\Utils\Validate\system;
+namespace Oploshka\ReformItem;
 
-class IntValidate implements \Rpc\Utils\ValidateInterface {
+use phpDocumentor\Reflection\Types\Null_;
+
+class IntReform implements \Oploshka\Reform\ReformItemInterface {
 
   private static $settings = ['min' => 0, 'max'=>1000000000,];
 
@@ -11,7 +13,19 @@ class IntValidate implements \Rpc\Utils\ValidateInterface {
   }
 
   public static function validate($value, $validate = array()) {
-    if($value === '' || (!is_numeric($value) || intval($value) != $value)){return NULL;}
+    $valueType = gettype ($value);
+    if($valueType === 'integer'){
+      //
+    } else if($valueType === 'string'){
+      if($value === ''){return NULL;}
+      if(!is_numeric($value) ){return NULL;}
+      $_v = intval($value);
+      if($value !== (string) $_v ){return NULL;}
+      $value = $_v;
+    } else {
+      return NULL;
+    }
+    
     // установки по умолчанию
     $min  = self::$settings['min'];
     $max  = self::$settings['max'];
