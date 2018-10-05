@@ -1,8 +1,8 @@
 <?php
 
-namespace Rpc\Utils\Validate\system;
+namespace Oploshka\ReformItem;
 
-class FloatValidate implements \Rpc\Utils\ValidateInterface {
+class FloatReform implements \Oploshka\Reform\ReformItemInterface {
 
   private static $settings = ['min' => 0, 'max'=>1000000000];
 
@@ -11,8 +11,22 @@ class FloatValidate implements \Rpc\Utils\ValidateInterface {
   }
 
   public static function validate($value, $validate = array()) {
-    // if($value === '' || (!is_float($value) || floatval($value) != $value)){return NULL;}
-    if( !is_numeric($value) ){ return NULL; }
+  
+    $valueType = gettype ($value);
+    if($valueType === 'double'){
+      //
+    } else if($valueType === 'integer'){
+      $value = (double) $value;
+    } else if($valueType === 'string'){
+      if($value === ''){return NULL;}
+      if(!is_numeric($value) ){return NULL;}
+      $_v = floatval($value);
+      if($value !== (string) $_v ){return NULL;}
+      $value = $_v;
+    } else {
+      return NULL;
+    }
+  
     // установки по умолчанию
     $min  = self::$settings['min'];
     $max  = self::$settings['max'];
