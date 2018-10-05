@@ -1,9 +1,9 @@
 <?php
 
-namespace Rpc\Utils\Validate\system;
+namespace Oploshka\ReformItem;
 
-class JsonValidate implements \Rpc\Utils\ValidateInterface {
-
+class JsonReform implements \Oploshka\Reform\ReformItemInterface {
+  
   private static $setting = [];
 
   public static function getSettings(){

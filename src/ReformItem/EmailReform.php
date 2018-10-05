@@ -1,8 +1,8 @@
 <?php
 
-namespace Rpc\Utils\Validate\system;
+namespace Oploshka\ReformItem;
 
-class EmailValidate implements \Rpc\Utils\ValidateInterface {
+class EmailReform implements \Oploshka\Reform\ReformItemInterface {
 
   private static $settings = [];
 
