@@ -1,8 +1,8 @@
 <?php
 
-namespace Rpc\Utils\Validate\system;
+namespace Oploshka\ReformItem;
 
-class ArrayValidate implements \Rpc\Utils\ValidateInterface {
+class ArrayReform implements \Oploshka\Reform\ReformItemInterface {
 
   private static $settings = [
     'parentValidateClass' => NULL,
@@ -12,7 +12,7 @@ class ArrayValidate implements \Rpc\Utils\ValidateInterface {
     return self::$settings;
   }
 
-  public static function validate($items, $validates = array()) {
+  public static function validate($items, $validates = array(), $Reform = NULL) {
     $value = array();
   
     foreach($validates as $key => $validate){
@@ -28,7 +28,7 @@ class ArrayValidate implements \Rpc\Utils\ValidateInterface {
         continue;
       }
       // если поле есть то проверим его
-      $value[$key] = \Rpc\Utils\Validate::item($items[$key], $validate);
+      $value[$key] = $Reform->item($items[$key], $validate);
     
       if( $value[$key] === NULL ) {
         // print 'ERROR_NOT_VALIDATE_TYPE_' . $key;
