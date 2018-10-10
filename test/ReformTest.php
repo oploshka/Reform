@@ -18,8 +18,8 @@ class ReformTest extends TestCase {
       'datetime'      => 'Oploshka\\ReformItem\\DateTimeReform'     ,
       'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,
       
-      'array'        => 'Oploshka\\ReformItem\\ArrayReform'         ,
-      'simpleArray'  => 'Oploshka\\ReformItem\\SimpleArrayReform'   ,
+      'array'         => 'Oploshka\\ReformItem\\ArrayReform'         ,
+      'simpleArray'   => 'Oploshka\\ReformItem\\SimpleArrayReform'   ,
     );
     $Reform = new \Oploshka\Reform\Reform($reformTypes);
 

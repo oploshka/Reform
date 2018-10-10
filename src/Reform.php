@@ -4,10 +4,26 @@ namespace Oploshka\Reform;
 
 class Reform implements \Oploshka\Reform\ReformInterface {
   
-  private $reformMethods;
+  private $reformMethods = [
+    'string'        => 'Oploshka\\ReformItem\\StringReform'       ,
+    'int'           => 'Oploshka\\ReformItem\\IntReform'          ,
+    'float'         => 'Oploshka\\ReformItem\\FloatReform'        ,
+    'email'         => 'Oploshka\\ReformItem\\EmailReform'        ,
+    'password'      => 'Oploshka\\ReformItem\\PasswordReform'     ,
+    'origin'        => 'Oploshka\\ReformItem\\OriginReform'       ,
+    'datetime'      => 'Oploshka\\ReformItem\\DateTimeReform'     ,
+    'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,
+    'array'         => 'Oploshka\\ReformItem\\ArrayReform'        ,
+    'simpleArray'   => 'Oploshka\\ReformItem\\SimpleArrayReform'  ,
+  ];
 
-  function  __construct($reformMethods){
-    $this->reformMethods = $reformMethods;
+  function  __construct($reformMethods = []){
+    $this->reformMethods = array_merge($this->reformMethods, $reformMethods);
+    foreach ($this->reformMethods as $key => $val){
+      if($val === false){
+        unset($this->reformMethods[$key]);
+      }
+    }
   }
   
   /*
