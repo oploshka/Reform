@@ -27,7 +27,7 @@ class Reform implements \Oploshka\Reform\ReformInterface {
     if ( !($useClass instanceof \Oploshka\Reform\ReformItemInterface ) ) { return NULL; }
   
     $_validate = $validate['validate'] ?? [];
-    return $useClass::validate($item, $_validate);
+    return $useClass::validate($item, $_validate, $this);
   }
   
 }

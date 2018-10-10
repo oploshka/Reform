@@ -4,9 +4,7 @@ namespace Oploshka\ReformItem;
 
 class ArrayReform implements \Oploshka\Reform\ReformItemInterface {
 
-  private static $settings = [
-    'parentValidateClass' => NULL,
-  ];
+  private static $settings = [];
 
   public static function getSettings(){
     return self::$settings;

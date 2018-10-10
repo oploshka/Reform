@@ -17,6 +17,9 @@ class ReformTest extends TestCase {
       'origin'        => 'Oploshka\\ReformItem\\OriginReform'       ,
       'datetime'      => 'Oploshka\\ReformItem\\DateTimeReform'     ,
       'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,
+      
+      'array'        => 'Oploshka\\ReformItem\\ArrayReform'         ,
+      'simpleArray'  => 'Oploshka\\ReformItem\\SimpleArrayReform'   ,
     );
     $Reform = new \Oploshka\Reform\Reform($reformTypes);
 
@@ -31,23 +34,50 @@ class ReformTest extends TestCase {
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] ) !== NULL );
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] )['s'] === 4 );
 
-    // TODO: add test array
-    // $data = $Reform->item(
-    //  [
-    //    's' => 'test string',
-    //    'i' => 23,
-    //  ],
-    //  [
-    //    'type' => 'array',
-    //    'validate' => [
-    //      's' => ['type' => 'string' ],
-    //      'i' => ['type' => 'int'    ],
-    //    ],
-    //  ]
-    // );
-    //
-    // $this->assertTrue(23 === $data['i']);
-    // $this->assertTrue('test string' === $data['s']);
+    // test array
+    $reformArray1 = [ 's' => 'test string', 'i' => 23, ];
+    $reformArray1Schema = [
+      'type' => 'array',
+      'validate' => [
+        's' => ['type' => 'string' ],
+        'i' => ['type' => 'int'    ],
+      ],
+    ];
+    $reformArray1Result = $Reform->item($reformArray1, $reformArray1Schema);
+    $this->assertEquals($reformArray1Result, $reformArray1);
+  
+    $reformArray2 = [ 'a' => ['i'=> 24, 's' => 'string 2',], ];
+    $reformArray2Schema = [
+      'type' => 'array',
+      'validate' => [
+        'a' => [
+          'type' => 'array',
+          'validate' => [
+            'i' => ['type' => 'int'    ],
+            's' => ['type' => 'string' ],
+          ],
+        ],
+      ],
+    ];
+    $reformArray2Result = $Reform->item($reformArray2, $reformArray2Schema);
+    $this->assertEquals($reformArray2Result, $reformArray2);
+  
     
+    // test simple array
+    $reformSimpleArray1 = [ 1, 85, '49', 76 ];
+    $reformSimpleArray1Schema = [
+      'type' => 'simpleArray',
+      'validate' => [ 'type' => 'int' ],
+    ];
+    $reformSimpleArray1Result = $Reform->item($reformSimpleArray1, $reformSimpleArray1Schema);
+    $this->assertEquals($reformSimpleArray1Result, $reformSimpleArray1);
+    
+    $reformSimpleArray1 = [ 1, 'string', 49, 76 ];
+    $reformSimpleArray1Schema = [
+      'type' => 'simpleArray',
+      'validate' => [ 'type' => 'int' ],
+    ];
+    $reformSimpleArray1Result = $Reform->item($reformSimpleArray1, $reformSimpleArray1Schema);
+    $this->assertEquals($reformSimpleArray1Result, NULL);
   }
 }

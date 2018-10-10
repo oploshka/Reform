@@ -4,10 +4,7 @@ namespace Oploshka\ReformItem;
 
 class SimpleArrayReform implements \Oploshka\Reform\ReformItemInterface {
 
-  private static $settings = [
-    'type'      => 'string',
-    'validate'  => []
-  ];
+  private static $settings = [];
 
   public static function getSettings(){
     return self::$settings;
