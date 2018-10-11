@@ -8,21 +8,7 @@ class ReformTest extends TestCase {
 
   public function testReformWork() {
 
-    $reformTypes = array(
-      'string'        => 'Oploshka\\ReformItem\\StringReform'       ,
-      'int'           => 'Oploshka\\ReformItem\\IntReform'          ,
-      'float'         => 'Oploshka\\ReformItem\\FloatReform'        ,
-      'email'         => 'Oploshka\\ReformItem\\EmailReform'        ,
-      'password'      => 'Oploshka\\ReformItem\\PasswordReform'     ,
-      'origin'        => 'Oploshka\\ReformItem\\OriginReform'       ,
-      'datetime'      => 'Oploshka\\ReformItem\\DateTimeReform'     ,
-      'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,
-      'objToJson'     => 'Oploshka\\ReformItem\\JsonStringReform'   ,
-      
-      'array'         => 'Oploshka\\ReformItem\\ArrayReform'         ,
-      'simpleArray'   => 'Oploshka\\ReformItem\\SimpleArrayReform'   ,
-    );
-    $Reform = new \Oploshka\Reform\Reform($reformTypes);
+    $Reform = new \Oploshka\Reform\Reform();
 
     // test item string
     $this->assertTrue( $Reform->item('string' , ['type' => 'string']) === 'string');
@@ -34,6 +20,7 @@ class ReformTest extends TestCase {
     $this->assertTrue( $Reform->item('{"s":"a"}'    , ['type' => 'origin'] ) === '{"s":"a"}' );
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] ) !== NULL );
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] )['s'] === 4 );
+    $this->assertEquals( $Reform->item(["s"=>4], ['type' => 'objToJson'] ), '{"s":4}' );
 
     // test array
     $reformArray1 = [ 's' => 'test string', 'i' => 23, ];

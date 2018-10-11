@@ -13,7 +13,7 @@ class Reform implements \Oploshka\Reform\ReformInterface {
     'origin'        => 'Oploshka\\ReformItem\\OriginReform'       ,
     'datetime'      => 'Oploshka\\ReformItem\\DateTimeReform'     ,
     'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,
-    'objToJson'     => 'Oploshka\\ReformItem\\JsonStringReform'   ,
+    'objToJson'     => 'Oploshka\\ReformItem\\ObjToJsonReform'   ,
     
     'array'         => 'Oploshka\\ReformItem\\ArrayReform'        ,
     'simpleArray'   => 'Oploshka\\ReformItem\\SimpleArrayReform'  ,
