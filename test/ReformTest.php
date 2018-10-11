@@ -17,6 +17,7 @@ class ReformTest extends TestCase {
       'origin'        => 'Oploshka\\ReformItem\\OriginReform'       ,
       'datetime'      => 'Oploshka\\ReformItem\\DateTimeReform'     ,
       'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,
+      'objToJson'     => 'Oploshka\\ReformItem\\JsonStringReform'   ,
       
       'array'         => 'Oploshka\\ReformItem\\ArrayReform'         ,
       'simpleArray'   => 'Oploshka\\ReformItem\\SimpleArrayReform'   ,
