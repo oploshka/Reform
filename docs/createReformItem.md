@@ -13,7 +13,7 @@ class ExampleName implements \Oploshka\Reform\ReformItemInterface {
   }
 
   public static function validate($value, $validate = array()) {
-    return NULL;
+    return null;
   }
 }
 ```
@@ -35,7 +35,7 @@ class TokenReform implements \Oploshka\Reform\ReformItemInterface {
   }
 
   public static function validate($value, $validate = array()) {
-    if(!is_string($value)) {return NULL;}
+    if(!is_string($value)) {return null;}
     $_sql = Database::getConnection();
     // DBAL SQL example:
     $userInfo = $_sql->fetchAssoc(
@@ -51,7 +51,7 @@ class TokenReform implements \Oploshka\Reform\ReformItemInterface {
       ]
     );
   
-    if(!$userInfo){ return NULL; }
+    if(!$userInfo){ return null; }
   
     return $userInfo;
   }
@@ -75,7 +75,7 @@ class CityReform implements \Oploshka\Reform\ReformItemInterface {
   }
 
   public static function validate($value, $validate = array()) {
-    if(!is_string($value)) {return NULL;}
+    if(!is_string($value)) {return null;}
     $_sql = Database::getConnection();
     // DBAL SQL example:
     $cityInfo = $_sql->fetchAssoc(
@@ -91,7 +91,7 @@ class CityReform implements \Oploshka\Reform\ReformItemInterface {
       ]
     );
   
-    if(!$cityInfo){ return NULL; }
+    if(!$cityInfo){ return null; }
   
     return $cityInfo;
   }

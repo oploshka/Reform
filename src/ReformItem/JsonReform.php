@@ -11,9 +11,9 @@ class JsonReform implements \Oploshka\Reform\ReformItemInterface {
   }
 
   public static function validate($value, $validate = array()) {
-    if(!is_string($value)) {return NULL;}
+    if(!is_string($value)) {return null;}
     $value = (array) json_decode ($value, true);
-    if (json_last_error() != 0){return NULL;}
+    if (json_last_error() != 0){return null;}
     return $value;
   }
 }

@@ -11,8 +11,8 @@ class EmailReform implements \Oploshka\Reform\ReformItemInterface {
   }
 
   public static function validate($value, $validate = array()) {
-    if(!is_string($value)) { return NULL; }
-    if (!filter_var($value, FILTER_VALIDATE_EMAIL)) { return NULL; }
+    if(!is_string($value)) { return null; }
+    if (!filter_var($value, FILTER_VALIDATE_EMAIL)) { return null; }
     return $value;
   }
 }

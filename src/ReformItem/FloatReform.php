@@ -18,13 +18,13 @@ class FloatReform implements \Oploshka\Reform\ReformItemInterface {
     } else if($valueType === 'integer'){
       $value = (double) $value;
     } else if($valueType === 'string'){
-      if($value === ''){return NULL;}
-      if(!is_numeric($value) ){return NULL;}
+      if($value === ''){return null;}
+      if(!is_numeric($value) ){return null;}
       $_v = floatval($value);
-      if($value !== (string) $_v ){return NULL;}
+      if($value !== (string) $_v ){return null;}
       $value = $_v;
     } else {
-      return NULL;
+      return null;
     }
   
     // установки по умолчанию
@@ -34,8 +34,8 @@ class FloatReform implements \Oploshka\Reform\ReformItemInterface {
     if(isset($validate['min']) )  { $min = $validate['min']; }
     if(isset($validate['max']) )  { $max = $validate['max']; }
   
-    if($value < $min ){ return NULL; }
-    if($value > $max ){ return NULL; }
+    if($value < $min ){ return null; }
+    if($value > $max ){ return null; }
     return (float) $value;
   }
 }

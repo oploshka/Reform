@@ -11,10 +11,10 @@ class FloatReformTest extends TestCase {
     $this->assertTrue( FloatReform::validate('0') === 0.0);
     $this->assertTrue( FloatReform::validate('123') === 123.0);
     $this->assertTrue( FloatReform::validate('123.1') === 123.1);
-    $this->assertTrue( FloatReform::validate('') === NULL);
-    $this->assertTrue( FloatReform::validate('0123') === NULL);
-    $this->assertTrue( FloatReform::validate('123a') === NULL);
-    $this->assertTrue( FloatReform::validate('a123') === NULL);
+    $this->assertTrue( FloatReform::validate('') === null);
+    $this->assertTrue( FloatReform::validate('0123') === null);
+    $this->assertTrue( FloatReform::validate('123a') === null);
+    $this->assertTrue( FloatReform::validate('a123') === null);
   }
   public function testIntIsFloat() {
     $this->assertTrue( FloatReform::validate(1884   ) === 1884.0);
@@ -29,16 +29,16 @@ class FloatReformTest extends TestCase {
     $this->assertTrue( FloatReform::validate(0.1) === 0.1);
   }
   public function testBooleanIsNoFloat() {
-    $this->assertTrue( FloatReform::validate(true   ) === NULL);
-    $this->assertTrue( FloatReform::validate(false  ) === NULL);
+    $this->assertTrue( FloatReform::validate(true   ) === null);
+    $this->assertTrue( FloatReform::validate(false  ) === null);
   }
   public function testNullIsNoFloat() {
-    $this->assertTrue( FloatReform::validate(null   ) === NULL);
+    $this->assertTrue( FloatReform::validate(null   ) === null);
   }
   public function testArrayIsNoFloat() {
-    $this->assertTrue( FloatReform::validate([]) === NULL);
-    $this->assertTrue( FloatReform::validate(['string']) === NULL);
-    $this->assertTrue( FloatReform::validate(['string', 'test']) === NULL);
-    $this->assertTrue( FloatReform::validate(['string' => 'test']) === NULL);
+    $this->assertTrue( FloatReform::validate([]) === null);
+    $this->assertTrue( FloatReform::validate(['string']) === null);
+    $this->assertTrue( FloatReform::validate(['string', 'test']) === null);
+    $this->assertTrue( FloatReform::validate(['string' => 'test']) === null);
   }
 }

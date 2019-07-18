@@ -26,13 +26,13 @@ class PasswordReform implements \Oploshka\Reform\ReformItemInterface {
     if(isset($validate['alg']) )  { $alg = $validate['alg']; }
   
     $value = StringReform::validate($value, ['trim' => false, 'min' => $min, 'max' => $max, ]);
-    if( $value === NULL ) {return NULL;}
+    if( $value === null ) {return null;}
   
     // $alg  = self::$settings['alg'];
     // if($alg > 1){
-    //   if(!preg_match('/\d/'   , $value)){ return NULL; }
-    //   if(!preg_match('/[a-z]/', $value)){ return NULL; }
-    //   if(!preg_match('/[A-Z]/', $value)){ return NULL; }
+    //   if(!preg_match('/\d/'   , $value)){ return null; }
+    //   if(!preg_match('/[a-z]/', $value)){ return null; }
+    //   if(!preg_match('/[A-Z]/', $value)){ return null; }
     // }
   
     //

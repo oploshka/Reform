@@ -31,18 +31,18 @@ class Reform implements \Oploshka\Reform\ReformInterface {
   /*
    * Функция валидации переменной
    */
-  public function item($item = NULL, $validate = array() ){
+  public function item($item = null, $validate = array() ){
     // проверим данные на существование
-    if( $item === NULL )                { return NULL; }
-    if( !is_array($validate) )          { return NULL; }
-    if( !isset($validate['type']) )     { return NULL; }
-    if( !is_string($validate['type']) ) { return NULL; }
-    if(!isset($this->reformMethods[ $validate['type'] ])){ return NULL; }
+    if( $item === null )                { return null; }
+    if( !is_array($validate) )          { return null; }
+    if( !isset($validate['type']) )     { return null; }
+    if( !is_string($validate['type']) ) { return null; }
+    if(!isset($this->reformMethods[ $validate['type'] ])){ return null; }
     //
     $ValidateClassName = $this->reformMethods[ $validate['type'] ];
     $useClass = new $ValidateClassName();
     // проверим реализует ли класс наш интерфейс
-    if ( !($useClass instanceof \Oploshka\Reform\ReformItemInterface ) ) { return NULL; }
+    if ( !($useClass instanceof \Oploshka\Reform\ReformItemInterface ) ) { return null; }
   
     $_validate = $validate['validate'] ?? [];
     return $useClass::validate($item, $_validate, $this);
