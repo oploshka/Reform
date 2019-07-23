@@ -16,9 +16,9 @@ class ReformTest extends TestCase {
     $this->assertTrue( $Reform->item(1234.56  , ['type' => 'float'] ) === 1234.56 );
     $this->assertTrue( $Reform->item(1234.56  , ['type' => 'float'] ) === 1234.56 );
     $this->assertTrue( $Reform->item('email@mail.ru', ['type' => 'email'] ) === 'email@mail.ru' );
-    $this->assertTrue( $Reform->item('Password_#1'  , ['type' => 'password'] ) !== NULL  );
+    $this->assertTrue( $Reform->item('Password_#1'  , ['type' => 'password'] ) !== null  );
     $this->assertTrue( $Reform->item('{"s":"a"}'    , ['type' => 'origin'] ) === '{"s":"a"}' );
-    $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] ) !== NULL );
+    $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] ) !== null );
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] )['s'] === 4 );
     $this->assertEquals( $Reform->item(["s"=>4], ['type' => 'objToJson'] ), '{"s":4}' );
 
@@ -66,6 +66,6 @@ class ReformTest extends TestCase {
       'validate' => [ 'type' => 'int' ],
     ];
     $reformSimpleArray1Result = $Reform->item($reformSimpleArray1, $reformSimpleArray1Schema);
-    $this->assertEquals($reformSimpleArray1Result, NULL);
+    $this->assertEquals($reformSimpleArray1Result, null);
   }
 }

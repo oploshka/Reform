@@ -11,18 +11,18 @@ class EmailReformTest extends TestCase {
     $this->assertTrue( EmailReform::validate('test@test.ru') === 'test@test.ru');
   }
   public function testStringIsNoEmail() {
-    $this->assertTrue( EmailReform::validate('test@tes@t.ru') === NULL);
-    $this->assertTrue( EmailReform::validate('testtest.ru') === NULL);
-    $this->assertTrue( EmailReform::validate('test@testru') === NULL);
-    $this->assertTrue( EmailReform::validate('testtestru') === NULL);
+    $this->assertTrue( EmailReform::validate('test@tes@t.ru') === null);
+    $this->assertTrue( EmailReform::validate('testtest.ru') === null);
+    $this->assertTrue( EmailReform::validate('test@testru') === null);
+    $this->assertTrue( EmailReform::validate('testtestru') === null);
   }
   // TODO
   // public function testIntIsNoEmail() {
-  //   $this->assertTrue( EmailReform::validate(1884   ) === NULL);
-  //   $this->assertTrue( EmailReform::validate(-8454  ) === NULL);
+  //   $this->assertTrue( EmailReform::validate(1884   ) === null);
+  //   $this->assertTrue( EmailReform::validate(-8454  ) === null);
   // }
   // public function testFloatIsNoEmail() {
-  //   $this->assertTrue( EmailReform::validate(1884.1 ) === NULL);
+  //   $this->assertTrue( EmailReform::validate(1884.1 ) === null);
   //   $this->assertTrue( EmailReform::validate(-8454.1) === NULL);
   // }
   // public function testBooleanIsNoEmail() {

@@ -10,14 +10,14 @@ class SimpleArrayReform implements \Oploshka\Reform\ReformItemInterface {
     return self::$settings;
   }
   
-  public static function validate($items, $validate = array(), $Reform = NULL) {
+  public static function validate($items, $validate = array(), $Reform = null) {
     $value    = array();    
     
     foreach($items as $key => $item){
       $value[$key] = $Reform->item($item, $validate);
       
-      if( $value[$key] === NULL ) {
-        return NULL;
+      if( $value[$key] === null ) {
+        return null;
       }
       
     }

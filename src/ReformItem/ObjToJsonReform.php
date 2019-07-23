@@ -12,7 +12,7 @@ class ObjToJsonReform implements \Oploshka\Reform\ReformItemInterface {
 
   public static function validate($value, $validate = array()) {
     if(!is_object($value) && !is_array($value)){
-      return NULL;
+      return null;
     }
     try {
       $returnJson = \json_encode(
@@ -26,12 +26,12 @@ class ObjToJsonReform implements \Oploshka\Reform\ReformItemInterface {
       // if (json_last_error() != 0 && json_last_error() != 7) {
       if (empty($returnJson)) {
         json_last_error();
-        return NULL;
+        return null;
       }
       return $returnJson;
     } catch (\Exception $e) {
       //
     }
-    return NULL;
+    return null;
   }
 }

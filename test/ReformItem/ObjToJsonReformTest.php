@@ -11,21 +11,21 @@ class ObjToJsonReformTest extends TestCase {
     $this->assertEquals( ObjToJsonReform::validate(["json" => "work"]) ,'{"json":"work"}');
   }
   public function testStringIsNoJsonString() {
-    $this->assertEquals( ObjToJsonReform::validate('work'), NULL);
+    $this->assertEquals( ObjToJsonReform::validate('work'), null);
   }
   public function testIntIsNoJsonString() {
-    $this->assertEquals( ObjToJsonReform::validate(1884), NULL);
-    $this->assertEquals( ObjToJsonReform::validate(-8454), NULL);
+    $this->assertEquals( ObjToJsonReform::validate(1884), null);
+    $this->assertEquals( ObjToJsonReform::validate(-8454), null);
   }
   public function testFloatIsNoJsonString() {
-    $this->assertEquals( ObjToJsonReform::validate(1884.1), NULL);
-    $this->assertEquals( ObjToJsonReform::validate(-8454.1), NULL);
+    $this->assertEquals( ObjToJsonReform::validate(1884.1), null);
+    $this->assertEquals( ObjToJsonReform::validate(-8454.1), null);
   }
   public function testBooleanIsNoJsonString() {
-    $this->assertEquals( ObjToJsonReform::validate(true), NULL);
-    $this->assertEquals( ObjToJsonReform::validate(false), NULL);
+    $this->assertEquals( ObjToJsonReform::validate(true), null);
+    $this->assertEquals( ObjToJsonReform::validate(false), null);
   }
   public function testNullIsNoJsonString() {
-    $this->assertEquals( ObjToJsonReform::validate(null), NULL);
+    $this->assertEquals( ObjToJsonReform::validate(null), null);
   }
 }

@@ -7,8 +7,8 @@ use PHPUnit\Framework\TestCase;
 class ArrayReformTest extends TestCase {
 
   public function testStringIsArray() {
-    $this->assertTrue( null === NULL);
+    $this->assertTrue( null === null);
     // TODO:
-    // $this->assertTrue( ArrayReform::validate('test string') === NULL);
+    // $this->assertTrue( ArrayReform::validate('test string') === null);
   }
 }

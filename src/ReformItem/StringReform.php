@@ -12,7 +12,7 @@ class StringReform implements \Oploshka\Reform\ReformItemInterface {
   }
 
   public static function validate($value, $validate = array()) {
-    if(!is_string($value)) {return NULL;}
+    if(!is_string($value)) {return null;}
     // установки по умолчанию
     $trim = self::$settings['trim'];
     $min  = self::$settings['min'];
@@ -26,8 +26,8 @@ class StringReform implements \Oploshka\Reform\ReformItemInterface {
   
     // проверка на длинну
     $len = strlen ( $value );
-    if($len < $min ){ return NULL; }
-    if($len > $max ){ return NULL; }
+    if($len < $min ){ return null; }
+    if($len > $max ){ return null; }
   
     return (string) $value;
   }

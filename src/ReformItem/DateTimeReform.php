@@ -14,8 +14,8 @@ class DateTimeReform implements \Oploshka\Reform\ReformItemInterface {
   public static function validate($value, $validate = array()) {
     
     $str_value = StringReform::validate($value);
-    if ($str_value === NULL) {
-      return NULL;
+    if ($str_value === null) {
+      return null;
     }
     
     $format = self::$settings['format'];
@@ -27,7 +27,7 @@ class DateTimeReform implements \Oploshka\Reform\ReformItemInterface {
     
     $error = \DateTime::getLastErrors();
     if ($error['warning_count'] != 0 || $error['error_count'] != 0) {
-      return NULL;
+      return null;
     }
     
     return $date;
