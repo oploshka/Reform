@@ -63,10 +63,11 @@ class ReformDebug implements \Oploshka\Reform\ReformInterface {
     }
   
     $_validate = $validate['validate'] ?? [];
-    $data = $useClass::validate($item, $_validate, $this);
-    if($data === null) {
-      $this->setError('FIELD', '', ['fieldName' => $item]);
-    }
+    $_parentPath = $validate['parentPath'] ?? [];
+    $data = $useClass::validate($item, $_validate, $this, $_parentPath);
+    //if($data === null) {
+    //  $this->setError('FIELD', '', ['fieldName' => $item]);
+    //}
     return $data;
   }
   
