@@ -15,7 +15,7 @@ class ArrayReform implements \Oploshka\Reform\ReformItemInterface {
   
     foreach($validates as $key => $validate){
       // если обязательное поле отсутствует или равно null, пустая строка
-      if(!isset($items[$key]) || $items[$key] === array() || $items[$key] === null || $items[$key] === '' ) {
+      if(!isset($items[$key]) || $items[$key] === null || $items[$key] === '' ) {
         // обязательно ли поле?
         if(!(isset($validate['req']) && $validate['req']==false)){
           // print $key;
@@ -35,4 +35,31 @@ class ArrayReform implements \Oploshka\Reform\ReformItemInterface {
     }
     return $value;
   }
+
+  public static function validateDebug($items, $validates = array(), $Reform = null) {
+    $value = array();
+
+    foreach($validates as $key => $validate){
+      // если обязательное поле отсутствует или равно null, пустая строка
+      if(!isset($items[$key]) || $items[$key] === array() || $items[$key] === null || $items[$key] === '' ) {
+        // обязательно ли поле?
+        if(!(isset($validate['req']) && $validate['req']==false)){
+          // TODO: fix // return null;
+          // print $key;
+        }
+        // поле необязательно
+        $value[$key] = null;
+        continue;
+      }
+      // если поле есть то проверим его
+      $value[$key] = $Reform->item($items[$key], $validate);
+
+      if( $value[$key] === null ) { //
+        // TODO: fix // return null;
+        // print 'ERROR_NOT_VALIDATE_TYPE_' . $key;
+      }
+    }
+    return $value;
+  }
+
 }
