@@ -27,7 +27,11 @@ class Reform implements \Oploshka\Reform\ReformInterface {
       }
     }
   }
-  
+
+  public function setError($errorCode='', $message='', $data = []){}
+  public function resetError(){}
+  public function getError(){ return []; }
+
   /*
    * Функция валидации переменной
    */

@@ -36,6 +36,9 @@ class ReformDebug implements \Oploshka\Reform\ReformInterface {
       'data'    => $data,
     ];
   }
+  public function resetError(){
+    $this->error = [];
+  }
   public function getError(){
     return $this->error;
   }
