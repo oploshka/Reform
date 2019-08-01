@@ -23,7 +23,7 @@ class ArrayDebugReform implements \Oploshka\Reform\ReformItemInterface {
       if(!isset($items[$key]) || $items[$key] === null ) {
         // обязательно ли поле?
         if(!(isset($validate['req']) && $validate['req']==false)){
-          $Reform->setError('FIELD', '', [ 'fileName' =>  $key, 'path' => $validate['parentPath'] ]);
+          $Reform->setError('FIELD', '', [ 'name' =>  $key, 'type' => $validate['type'] ?? '', 'path' => $validate['parentPath'] ]);
           $error = true;
         }
         // поле необязательно
@@ -35,7 +35,7 @@ class ArrayDebugReform implements \Oploshka\Reform\ReformItemInterface {
       $value[$key] = $Reform->item($items[$key], $validate);
     
       if( $value[$key] === null ) {
-        $Reform->setError('FIELD', '', [ 'fileName' =>  $key, 'path' => $validate['parentPath'] ]);
+        $Reform->setError('FIELD', '', [ 'name' =>  $key, 'type' => $validate['type'] ?? '', 'path' => $validate['parentPath'] ]);
         $error = true;
       }
     }
