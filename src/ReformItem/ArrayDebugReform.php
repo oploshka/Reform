@@ -2,7 +2,7 @@
 
 namespace Oploshka\ReformItem;
 
-class ArrayReform implements \Oploshka\Reform\ReformItemInterface {
+class ArrayDebugReform implements \Oploshka\Reform\ReformItemInterface {
 
   private static $settings = [];
 
@@ -11,6 +11,7 @@ class ArrayReform implements \Oploshka\Reform\ReformItemInterface {
   }
 
   public static function validate($items, $validates = array(), $Reform = null) {
+    $error = false;
     $value = array();
   
     foreach($validates as $key => $validate){
@@ -19,6 +20,7 @@ class ArrayReform implements \Oploshka\Reform\ReformItemInterface {
         // обязательно ли поле?
         if(!(isset($validate['req']) && $validate['req']==false)){
           // print $key;
+          $error = true;
           return null;
         }
         // поле необязательно
