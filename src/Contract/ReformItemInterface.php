@@ -1,6 +1,6 @@
 <?php
 
-namespace Oploshka\Reform;
+namespace Oploshka\Reform\Contract;
 
 interface ReformItemInterface {
   public static function getSettings();

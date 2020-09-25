@@ -2,7 +2,7 @@
 
 namespace Oploshka\ReformItem;
 
-class StringReform implements \Oploshka\Reform\ReformItemInterface {
+class StringReform implements \Oploshka\Reform\Contract\ReformItemInterface {
 
   // 'string'
   private static $settings = ['min' => 1, 'max'=>1024, 'trim' => true,];

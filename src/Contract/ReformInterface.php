@@ -1,6 +1,6 @@
 <?php
 
-namespace Oploshka\Reform;
+namespace Oploshka\Reform\Contract;
 
 interface ReformInterface {
   public function item();
