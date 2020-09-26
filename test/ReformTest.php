@@ -16,9 +16,9 @@ class ReformTest extends TestCase {
     // test item string
     $this->assertTrue( 15           === $Reform->item(15, new ReformSchema(ReformType::INTEGER)) );
     
+    $this->assertTrue( $Reform->item('string' , new ReformSchema(ReformType::STRING)) === 'string');
+    $this->assertTrue( $Reform->item(123456   , new ReformSchema(ReformType::INTEGER)) === 123456  );
     /*
-    $this->assertTrue( $Reform->item('string' , ['type' => 'string']) === 'string');
-    $this->assertTrue( $Reform->item(123456   , ['type' => 'int']   ) === 123456  );
     $this->assertTrue( $Reform->item(1234.56  , ['type' => 'float'] ) === 1234.56 );
     $this->assertTrue( $Reform->item(1234.56  , ['type' => 'float'] ) === 1234.56 );
     $this->assertTrue( $Reform->item('email@mail.ru', ['type' => 'email'] ) === 'email@mail.ru' );

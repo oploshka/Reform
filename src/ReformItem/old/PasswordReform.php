@@ -25,7 +25,7 @@ class PasswordReform implements \Oploshka\Reform\ReformItemInterface {
     if(isset($validate['max']) )  { $max = $validate['max']; }
     if(isset($validate['alg']) )  { $alg = $validate['alg']; }
   
-    $value = StringReform::validate($value, ['trim' => false, 'min' => $min, 'max' => $max, ]);
+    $value = StringReformItem::validate($value, ['trim' => false, 'min' => $min, 'max' => $max, ]);
     if( $value === null ) {return null;}
   
     // $alg  = self::$settings['alg'];

@@ -13,7 +13,7 @@ class DateTimeReform implements \Oploshka\Reform\ReformItemInterface {
   
   public static function validate($value, $validate = array()) {
     
-    $str_value = StringReform::validate($value);
+    $str_value = StringReformItem::validate($value);
     if ($str_value === null) {
       return null;
     }

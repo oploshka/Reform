@@ -14,7 +14,7 @@ abstract class ReformCore {
   }
 
   public function initDefaultReformMethod() {
-    // $this->addReformMethod(ReformType::STRING         );
+    $this->addReformMethod(ReformType::STRING         , \Oploshka\Reform\ReformItem\StringReformItem::class);
     $this->addReformMethod(ReformType::INTEGER        , \Oploshka\Reform\ReformItem\IntegerReformItem::class);
     // $this->addReformMethod(ReformType::FLOAT          );
     // $this->addReformMethod(ReformType::EMAIL          );

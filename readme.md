@@ -38,7 +38,7 @@ php composer.phar require oploshka/reform
 
 Sample code:
 ```php
-$Reform = new \Oploshka\Reform\Reform(['string' => 'Oploshka\\ReformItem\\StringReform']);
+$Reform = new \Oploshka\Reform\Reform(['string' => 'Oploshka\\ReformItem\\StringReformItem']);
 $result = $Reform->item('string', ['type' => 'string']);
 ```
 More info in docs

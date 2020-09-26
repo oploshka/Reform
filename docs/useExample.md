@@ -11,7 +11,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 // select the desired reform scheme
 $reformTypes = [
-  'string'        => 'Oploshka\\ReformItem\\StringReform'       ,
+  'string'        => 'Oploshka\\ReformItem\\StringReformItem'       ,
   'int'           => 'Oploshka\\ReformItem\\IntegerReformItem'          ,
   'float'         => 'Oploshka\\ReformItem\\FloatReform'        ,
   'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,

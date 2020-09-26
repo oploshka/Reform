@@ -15,7 +15,11 @@ class ReformException extends \Exception {
   const REFORM_METHOD_UNDEFINED = 'REFORM_METHOD_UNDEFINED';
   
   // integer
-  const NOT_INTEGER = 'NOT_INTEGER';
+  const NOT_INTEGER                   = 'NOT_INTEGER';
+  const NOT_CORRECT_INTEGER_INTERVAL  = 'NOT_CORRECT_INTEGER_INTERVAL';
+  
+  const NOT_STRING                    = 'NOT_STRING';
+  const NOT_CORRECT_STRING_LENGTH     = 'NOT_CORRECT_STRING_LENGTH';
   
   // Reform->item;
 //  const VALIDATE_IS_NOT_ARRAY           = 'VALIDATE_IS_NOT_ARRAY';

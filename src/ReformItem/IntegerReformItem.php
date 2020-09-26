@@ -48,12 +48,12 @@ class IntegerReformItem extends ReformItemAbstract implements ReformItemInterfac
     //
     if( $filter[self::FILTER_MIN] !== null)  {
       if($value < $filter[self::FILTER_MIN] ){
-        throw new ReformException(ReformException::NOT_CORRECT_INTEGER);
+        throw new ReformException(ReformException::NOT_CORRECT_INTEGER_INTERVAL);
       }
     }
     if( $filter[self::FILTER_MAX] !== null)  {
       if($value > $filter[self::FILTER_MAX] ){
-        throw new ReformException(ReformException::NOT_CORRECT_INTEGER);
+        throw new ReformException(ReformException::NOT_CORRECT_INTEGER_INTERVAL);
       }
     }
     

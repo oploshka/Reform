@@ -5,6 +5,7 @@ namespace Oploshka\Reform\Enum;
 interface ReformType {
   
   const INTEGER         = 'integer';
+  const STRING          = 'string';
   
   
 //  const STRING          = \Oploshka\Reform\ReformItem\StringReform::class;
