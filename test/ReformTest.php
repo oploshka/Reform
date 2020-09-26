@@ -18,9 +18,8 @@ class ReformTest extends TestCase {
     
     $this->assertTrue( $Reform->item('string' , new ReformSchema(ReformType::STRING)) === 'string');
     $this->assertTrue( $Reform->item(123456   , new ReformSchema(ReformType::INTEGER)) === 123456  );
+    $this->assertTrue( $Reform->item(1234.56  , new ReformSchema(ReformType::FLOAT)) === 1234.56  );
     /*
-    $this->assertTrue( $Reform->item(1234.56  , ['type' => 'float'] ) === 1234.56 );
-    $this->assertTrue( $Reform->item(1234.56  , ['type' => 'float'] ) === 1234.56 );
     $this->assertTrue( $Reform->item('email@mail.ru', ['type' => 'email'] ) === 'email@mail.ru' );
     $this->assertTrue( $Reform->item('Password_#1'  , ['type' => 'password'] ) !== null  );
     $this->assertTrue( $Reform->item('{"s":"a"}'    , ['type' => 'origin'] ) === '{"s":"a"}' );

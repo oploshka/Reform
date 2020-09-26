@@ -6,6 +6,7 @@ interface ReformType {
   
   const INTEGER         = 'integer';
   const STRING          = 'string';
+  const FLOAT           = 'float';
   
   
 //  const STRING          = \Oploshka\Reform\ReformItem\StringReform::class;

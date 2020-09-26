@@ -7,7 +7,7 @@ use Oploshka\Reform\Contract\ReformItemInterface;
 use Oploshka\Reform\Exception\ReformException;
 use Oploshka\Reform\ReformSchema;
 
-class IntegerReformItem extends ReformItemAbstract implements ReformItemInterface {
+class FloatReformItem extends ReformItemAbstract implements ReformItemInterface {
   
   const FILTER_MIN = 'min';
   const FILTER_MAX = 'max';
@@ -15,16 +15,14 @@ class IntegerReformItem extends ReformItemAbstract implements ReformItemInterfac
     self::FILTER_MIN => 0,
     self::FILTER_MAX => 1000000000,
   ];
-  
-  /**
-   * @param $value
-   * @param ReformSchema $reformSchema
-   * @return int
-   * @throws ReformException
-   */
+
   public static function validate($value, ReformSchema $reformSchema) {
     switch (gettype ($value)) {
-      case 'integer': break;
+      case 'double':
+        break;
+      case 'integer':
+        $value = (double) $value;
+        break;
       case 'string':
         if($value === ''){
           throw new ReformException(ReformException::NOT_INTEGER);
@@ -32,7 +30,7 @@ class IntegerReformItem extends ReformItemAbstract implements ReformItemInterfac
         if(!is_numeric($value) ){
           throw new ReformException(ReformException::NOT_INTEGER);
         }
-        $_v = intval($value);
+        $_v = floatval($value);
         if($value !== (string) $_v ){
           throw new ReformException(ReformException::NOT_INTEGER);
         }
