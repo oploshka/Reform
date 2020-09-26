@@ -18,8 +18,12 @@ class ReformException extends \Exception {
   const NOT_INTEGER                   = 'NOT_INTEGER';
   const NOT_CORRECT_INTEGER_INTERVAL  = 'NOT_CORRECT_INTEGER_INTERVAL';
   
+  // string
   const NOT_STRING                    = 'NOT_STRING';
   const NOT_CORRECT_STRING_LENGTH     = 'NOT_CORRECT_STRING_LENGTH';
+  
+  // email
+  const NOT_CORRECT_EMAIL             = 'NOT_CORRECT_EMAIL';
   
   // Reform->item;
 //  const VALIDATE_IS_NOT_ARRAY           = 'VALIDATE_IS_NOT_ARRAY';

@@ -4,10 +4,17 @@ namespace Oploshka\Reform\Enum;
 
 interface ReformType {
   
-  const INTEGER         = 'integer';
-  const STRING          = 'string';
+  const STRING          = 'integer';
+  const INTEGER         = 'string';
   const FLOAT           = 'float';
+  const EMAIL           = 'email';
   const PASSWORD        = 'password';
+  const DATE_TIME       = 'DateTime';
+  const JSON            = 'json';
+  const OBJECT_TO_JSON  = 'objectToJson';
+  const ARRAY           = 'Array';
+  const SIMPLE_ARRAY    = 'SimpleArray';
+  const ORIGIN          = 'Origin';
   
   
 //  const STRING          = \Oploshka\Reform\ReformItem\StringReform::class;
