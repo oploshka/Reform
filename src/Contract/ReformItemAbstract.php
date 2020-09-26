@@ -2,13 +2,23 @@
 
 namespace Oploshka\Reform\Contract;
 
-abstract class ReformItemAbstract implements \Oploshka\Reform\ReformItemInterface {
+use Oploshka\Reform\ReformSchema;
+
+abstract class ReformItemAbstract /* implements \Oploshka\Reform\ReformItemInterface */ {
   
-  protected static array $settings = [];
-  public static function getSettings(): array{
-    return self::$settings;
+  const FILTER = [];
+  public static function getFilter(): array{
+    return static::FILTER;
   }
   
-  abstract public static function getName():string;
-  abstract public static function validate($value, $validate = []);
+  public static function mergeFilter(array $filter) {
+    $newFilter = [];
+    foreach (static::FILTER as $key => $value) {
+      $newFilter[$key] = isset($filter[$key]) ? $filter[$key] : static::FILTER[$key];
+    }
+    return $newFilter;
+  }
+  
+//  abstract public static function getName():string;
+//  abstract public static function validate($value, $validate = []);
 }

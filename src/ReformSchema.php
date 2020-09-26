@@ -4,27 +4,38 @@ namespace Oploshka\Reform;
 
 class ReformSchema implements \Oploshka\Reform\Contract\ReformSchemaInterface {
   
-  private $type;
-  private $defaultValue;
+  private string $type;
+  private array $filter;
   private bool $require;
-  private array $validate;
+  private $defaultValue;
   
-  function  __construct($type, bool $require = true, array $validate = [], $defaultValue = null){
+  /**
+   * ReformSchema constructor.
+   * @param string $type
+   * @param array $filter
+   * @param bool $require
+   * @param null $defaultValue
+   */
+  function  __construct(string $type, array $filter = [],  bool $require = true, $defaultValue = null){
+    $this->type         = $type;
     $this->require      = $require;
-    $this->validate     = $validate;
+    $this->filter       = $filter;
     $this->defaultValue = $defaultValue;
   }
   
-  public function getDefaultValue(): ?mixed {
-    return $this->defaultValue;
+  /////////////////////////////////////////
+  /// getters
+  public function getType(): string {
+    return $this->type;
   }
-  
+  public function getFilter(): array {
+    return $this->filter;
+  }
   public function getRequire(): bool {
     return $this->require;
   }
-  
-  public function getValidate(): array {
-    return $this->validate;
+  public function getDefaultValue(): ?mixed {
+    return $this->defaultValue;
   }
   
 }

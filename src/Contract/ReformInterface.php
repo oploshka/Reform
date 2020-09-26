@@ -3,5 +3,5 @@
 namespace Oploshka\Reform\Contract;
 
 interface ReformInterface {
-  public function item();
+//  public function item();
 }

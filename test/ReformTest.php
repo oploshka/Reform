@@ -1,8 +1,11 @@
 <?php
 
-namespace Oploshka\Reform;
+namespace Oploshka\ReformTest;
 
 use PHPUnit\Framework\TestCase;
+
+use Oploshka\Reform\ReformSchema;
+use Oploshka\Reform\Enum\ReformType;
 
 class ReformTest extends TestCase {
 
@@ -11,6 +14,9 @@ class ReformTest extends TestCase {
     $Reform = new \Oploshka\Reform\Reform();
 
     // test item string
+    $this->assertTrue( 15           === $Reform->item(15, new ReformSchema(ReformType::INTEGER)) );
+    
+    /*
     $this->assertTrue( $Reform->item('string' , ['type' => 'string']) === 'string');
     $this->assertTrue( $Reform->item(123456   , ['type' => 'int']   ) === 123456  );
     $this->assertTrue( $Reform->item(1234.56  , ['type' => 'float'] ) === 1234.56 );
@@ -67,5 +73,6 @@ class ReformTest extends TestCase {
     ];
     $reformSimpleArray1Result = $Reform->item($reformSimpleArray1, $reformSimpleArray1Schema);
     $this->assertEquals($reformSimpleArray1Result, null);
+    */
   }
 }
