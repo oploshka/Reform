@@ -18,8 +18,6 @@ class StringReformItem extends ReformItemAbstract implements ReformItemInterface
     self::FILTER_TRIM => true,
   ];
   
-  
-  
   /**
    * @param $value
    * @param ReformSchema $reformSchema

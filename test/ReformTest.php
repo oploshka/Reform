@@ -16,12 +16,15 @@ class ReformTest extends TestCase {
     // test item string
     $this->assertTrue( 15           === $Reform->item(15, new ReformSchema(ReformType::INTEGER)) );
     
-    $this->assertTrue( $Reform->item('string' , new ReformSchema(ReformType::STRING)) === 'string');
-    $this->assertTrue( $Reform->item(123456   , new ReformSchema(ReformType::INTEGER)) === 123456  );
-    $this->assertTrue( $Reform->item(1234.56  , new ReformSchema(ReformType::FLOAT)) === 1234.56  );
+    $this->assertEquals( $Reform->item('string' , new ReformSchema(ReformType::STRING))   , 'string' );
+    $this->assertEquals( $Reform->item(123456   , new ReformSchema(ReformType::INTEGER))  , 123456   );
+    $this->assertEquals( $Reform->item(1234.56  , new ReformSchema(ReformType::FLOAT))    , 1234.56  );
+    
+    $hash = '3cb3f980f90f5336d4e6ef2aceeca619898f42ed946e423ce28fd4b830a47bee81a9b209eec048bc60b79207b305be7db6ba6e7e72c76430b53b8dccf63565cc';
+    $this->assertEquals( $Reform->item('Pass_#1', new ReformSchema(ReformType::PASSWORD)) , $hash       );
     /*
     $this->assertTrue( $Reform->item('email@mail.ru', ['type' => 'email'] ) === 'email@mail.ru' );
-    $this->assertTrue( $Reform->item('Password_#1'  , ['type' => 'password'] ) !== null  );
+    $this->assertTrue( $Reform->item(  , ['type' => 'password'] ) !== null  );
     $this->assertTrue( $Reform->item('{"s":"a"}'    , ['type' => 'origin'] ) === '{"s":"a"}' );
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] ) !== null );
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] )['s'] === 4 );

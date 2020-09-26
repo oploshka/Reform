@@ -7,6 +7,7 @@ interface ReformType {
   const INTEGER         = 'integer';
   const STRING          = 'string';
   const FLOAT           = 'float';
+  const PASSWORD        = 'password';
   
   
 //  const STRING          = \Oploshka\Reform\ReformItem\StringReform::class;

@@ -17,6 +17,7 @@ abstract class ReformCore {
     $this->addReformMethod(ReformType::STRING         , \Oploshka\Reform\ReformItem\StringReformItem::class);
     $this->addReformMethod(ReformType::INTEGER        , \Oploshka\Reform\ReformItem\IntegerReformItem::class);
     $this->addReformMethod(ReformType::FLOAT          , \Oploshka\Reform\ReformItem\FloatReformItem::class);
+    $this->addReformMethod(ReformType::PASSWORD       , \Oploshka\Reform\ReformItem\PasswordReformItem::class);
     // $this->addReformMethod(ReformType::EMAIL          );
     // $this->addReformMethod(ReformType::PASSWORD       );
     // $this->addReformMethod(ReformType::ORIGIN         );
