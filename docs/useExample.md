@@ -17,7 +17,7 @@ $reformTypes = [
   'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,
   'email'         => 'Oploshka\\ReformItem\\EmailReformItem'        ,
   'password'      => 'Oploshka\\ReformItem\\PasswordReform'     ,
-  'origin'        => 'Oploshka\\ReformItem\\OriginReform'       ,
+  'origin'        => 'Oploshka\\ReformItem\\OriginReformItem'       ,
   'datetime'      => 'Oploshka\\ReformItem\\DateTimeReform'     ,
 ];
 // Init reform class

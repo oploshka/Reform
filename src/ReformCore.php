@@ -19,8 +19,7 @@ abstract class ReformCore {
     $this->addReformMethod(ReformType::FLOAT          , \Oploshka\Reform\ReformItem\FloatReformItem::class);
     $this->addReformMethod(ReformType::EMAIL          , \Oploshka\Reform\ReformItem\EmailReformItem::class);
     $this->addReformMethod(ReformType::PASSWORD       , \Oploshka\Reform\ReformItem\PasswordReformItem::class);
-    // $this->addReformMethod(ReformType::PASSWORD       );
-    // $this->addReformMethod(ReformType::ORIGIN         );
+    $this->addReformMethod(ReformType::ORIGIN         , \Oploshka\Reform\ReformItem\OriginReformItem::class);
     // $this->addReformMethod(ReformType::DATE_TIME      );
     // $this->addReformMethod(ReformType::JSON           );
     // $this->addReformMethod(ReformType::OBJECT_TO_JSON );

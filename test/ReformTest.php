@@ -24,8 +24,8 @@ class ReformTest extends TestCase {
     $this->assertEquals( $Reform->item('Pass_#1', new ReformSchema(ReformType::PASSWORD)) , $hash       );
   
     $this->assertEquals( $Reform->item('email@mail.ru', new ReformSchema(ReformType::EMAIL)), 'email@mail.ru'  );
+    $this->assertEquals( $Reform->item('{"s":"a"}', new ReformSchema(ReformType::ORIGIN)), '{"s":"a"}'  );
     /*
-    $this->assertTrue( $Reform->item('{"s":"a"}'    , ['type' => 'origin'] ) === '{"s":"a"}' );
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] ) !== null );
     $this->assertTrue( $Reform->item('{"s":4}'      , ['type' => 'json'] )['s'] === 4 );
     $this->assertEquals( $Reform->item(["s"=>4], ['type' => 'objToJson'] ), '{"s":4}' );
