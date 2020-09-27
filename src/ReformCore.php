@@ -24,9 +24,9 @@ abstract class ReformCore {
     $this->addReformMethod(ReformType::DATE_TIME      , \Oploshka\Reform\ReformItem\DateTimeReformItem::class);
     $this->addReformMethod(ReformType::JSON           , \Oploshka\Reform\ReformItem\JsonReformItem::class);
     $this->addReformMethod(ReformType::OBJECT_TO_JSON , \Oploshka\Reform\ReformItem\ObjectToJsonReformItem::class);
-
-    // $this->addReformMethod(ReformType::ARRAY          );
-    // $this->addReformMethod(ReformType::SIMPLE_ARRAY   );
+    
+    $this->addReformMethod(ReformType::SIMPLE_ARRAY   , \Oploshka\Reform\ReformItem\SimpleArrayReformItemDebug::class);
+    $this->addReformMethod(ReformType::ARRAY          , \Oploshka\Reform\ReformItem\ArrayReformItemDebug::class);
   }
   
   /**

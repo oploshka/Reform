@@ -14,7 +14,7 @@ class ReformSchema implements \Oploshka\Reform\Contract\ReformSchemaInterface {
    * @param string $type
    * @param array $filter
    * @param bool $require
-   * @param null $defaultValue
+   * @param mixed $defaultValue
    */
   function  __construct(string $type, array $filter = [],  bool $require = true, $defaultValue = null){
     $this->type         = $type;
@@ -34,7 +34,7 @@ class ReformSchema implements \Oploshka\Reform\Contract\ReformSchemaInterface {
   public function getRequire(): bool {
     return $this->require;
   }
-  public function getDefaultValue(): mixed {
+  public function getDefaultValue() {
     return $this->defaultValue;
   }
   

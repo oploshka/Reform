@@ -26,6 +26,11 @@ class ReformException extends \Exception {
   // email
   const NOT_CORRECT_EMAIL             = 'NOT_CORRECT_EMAIL';
   
+  // email
+  const NOT_CORRECT_ARRAY             = 'NOT_CORRECT_ARRAY';
+  
+  const NOT_REQUIRE_FIELD             = 'NOT_REQUIRE_FIELD';
+  
   // Reform->item;
 //  const VALIDATE_IS_NOT_ARRAY           = 'VALIDATE_IS_NOT_ARRAY';
 //  const VALIDATE_TYPE_NO_ISSET          = 'VALIDATE_TYPE_NO_ISSET';
@@ -34,7 +39,13 @@ class ReformException extends \Exception {
 //  const ERROR_NOT_INSTANCEOF_INTERFACE  = 'ERROR_NOT_INSTANCEOF_INTERFACE';
   //
   
-  public function __construct($message = null, $code = 0, Exception $previous = null){
+  private $details = [];
+  public function getDetails() {
+    return $this->details;
+  }
+  
+  public function __construct($message = null, $code = 0, Exception $previous = null, $details = []){
+    $this->details = $details;
     parent::__construct('ERROR_REFORM__' .$message, $code, $previous);
   }
   
