@@ -16,13 +16,7 @@ class IntegerReformItem extends ReformItemAbstract implements ReformItemInterfac
     self::FILTER_MAX => 1000000000,
   ];
   
-  /**
-   * @param $value
-   * @param ReformSchema $reformSchema
-   * @return int
-   * @throws ReformException
-   */
-  public static function validate($value, ReformSchema $reformSchema) {
+  public static function validate($value) {
     switch (gettype ($value)) {
       case 'integer': break;
       case 'string':
@@ -42,9 +36,10 @@ class IntegerReformItem extends ReformItemAbstract implements ReformItemInterfac
         throw new ReformException(ReformException::NOT_INTEGER);
         break;
     }
-    
-    $filter = self::mergeFilter($reformSchema->getFilter());
-    //
+    return $value;
+  }
+  
+  protected static function filterItem($value, $filter) {
     if( $filter[self::FILTER_MIN] !== null)  {
       if($value < $filter[self::FILTER_MIN] ){
         throw new ReformException(ReformException::NOT_CORRECT_INTEGER_INTERVAL);
@@ -55,7 +50,6 @@ class IntegerReformItem extends ReformItemAbstract implements ReformItemInterfac
         throw new ReformException(ReformException::NOT_CORRECT_INTEGER_INTERVAL);
       }
     }
-    
     return $value;
   }
   

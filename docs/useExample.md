@@ -14,11 +14,11 @@ $reformTypes = [
   'string'        => 'Oploshka\\ReformItem\\StringReformItem'       ,
   'int'           => 'Oploshka\\ReformItem\\IntegerReformItem'          ,
   'float'         => 'Oploshka\\ReformItem\\FloatReform'        ,
-  'json'          => 'Oploshka\\ReformItem\\JsonReform'         ,
+  'json'          => 'Oploshka\\ReformItem\\JsonReformItem'         ,
   'email'         => 'Oploshka\\ReformItem\\EmailReformItem'        ,
   'password'      => 'Oploshka\\ReformItem\\PasswordReform'     ,
   'origin'        => 'Oploshka\\ReformItem\\OriginReformItem'       ,
-  'datetime'      => 'Oploshka\\ReformItem\\DateTimeReform'     ,
+  'datetime'      => 'Oploshka\\ReformItem\\DateTimeReformItem'     ,
 ];
 // Init reform class
 $Reform = new \Oploshka\Reform\Reform($reformTypes);

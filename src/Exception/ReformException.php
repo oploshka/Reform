@@ -20,6 +20,7 @@ class ReformException extends \Exception {
   
   // string
   const NOT_STRING                    = 'NOT_STRING';
+  const NOT_CORRECT_STRING            = 'NOT_CORRECT_STRING';
   const NOT_CORRECT_STRING_LENGTH     = 'NOT_CORRECT_STRING_LENGTH';
   
   // email

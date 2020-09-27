@@ -23,7 +23,7 @@ class Reform extends ReformCore /* implements \Oploshka\Reform\ReformInterface *
     /** @var $reformItemClass \Oploshka\Reform\ReformItem\IntegerReformItem  */
     $reformItemClass = $this->getReformMethodClass($reformSchema->getType());
   
-    return $reformItemClass::validate($item, $reformSchema, $this);
+    return $reformItemClass::reformValidate($item, $reformSchema, $this);
   }
   
 }

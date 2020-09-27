@@ -16,7 +16,7 @@ class FloatReformItem extends ReformItemAbstract implements ReformItemInterface 
     self::FILTER_MAX => 1000000000,
   ];
 
-  public static function validate($value, ReformSchema $reformSchema) {
+  public static function validate($value) {
     switch (gettype ($value)) {
       case 'double':
         break;
@@ -40,9 +40,10 @@ class FloatReformItem extends ReformItemAbstract implements ReformItemInterface 
         throw new ReformException(ReformException::NOT_INTEGER);
         break;
     }
-    
-    $filter = self::mergeFilter($reformSchema->getFilter());
-    //
+    return $value;
+  }
+  
+  protected static function filterItem($value, $filter) {
     if( $filter[self::FILTER_MIN] !== null)  {
       if($value < $filter[self::FILTER_MIN] ){
         throw new ReformException(ReformException::NOT_CORRECT_INTEGER_INTERVAL);
@@ -53,7 +54,6 @@ class FloatReformItem extends ReformItemAbstract implements ReformItemInterface 
         throw new ReformException(ReformException::NOT_CORRECT_INTEGER_INTERVAL);
       }
     }
-    
     return $value;
   }
   

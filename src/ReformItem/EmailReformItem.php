@@ -21,15 +21,19 @@ class EmailReformItem extends ReformItemAbstract implements ReformItemInterface 
     self::FILTER_TRIM                   => true,
   ];
   
-  public static function validate($value, ReformSchema $reformSchema, Reform $reform) {
   
-    $filter = self::mergeFilter($reformSchema->getFilter());
-  
-    $value = $reform->item($value, new ReformSchema(ReformType::STRING, $filter) );
-    
+  public static function validate($value) {
+    if (!is_string($value)) {
+      throw new ReformException(ReformException::NOT_STRING);
+    }
     if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
       throw new ReformException(ReformException::NOT_CORRECT_EMAIL);
     }
     return $value;
   }
+  
+  protected static function filterItem($value, $filter) {
+    return $value;
+  }
+  
 }

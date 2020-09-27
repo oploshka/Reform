@@ -34,7 +34,7 @@ class ReformSchema implements \Oploshka\Reform\Contract\ReformSchemaInterface {
   public function getRequire(): bool {
     return $this->require;
   }
-  public function getDefaultValue(): ?mixed {
+  public function getDefaultValue(): mixed {
     return $this->defaultValue;
   }
   

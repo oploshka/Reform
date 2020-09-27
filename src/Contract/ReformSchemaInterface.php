@@ -7,7 +7,7 @@ interface ReformSchemaInterface {
 //  /**
 //   * @return mixed|null
 //   */
-//  public function getDefaultValue(): ?mixed;
+//  public function getDefaultValue(): mixed;
 //
 //  /**
 //   * @return bool
